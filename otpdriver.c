@@ -124,7 +124,7 @@ ssize_t otp_read(struct file *filp, char *buf, size_t count, loff_t *f_pos)
         return -EINVAL;
     }
 
-    *f_pos = out_size;
+    *f_pos = out_size - 1;
 
-    return out_size;
+    return out_size - 1;
 }
