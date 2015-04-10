@@ -1,4 +1,7 @@
-obj-m += otpdriver.o
+ccflags-y := -std=gnu99
+
+obj-m += otp.o
+otp-objs := otpdriver.o base32.o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
